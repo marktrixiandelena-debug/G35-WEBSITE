@@ -1,0 +1,413 @@
+/* ================================================
+   submit_report.css — Resident Submit Report Page
+   Barangay Calauag Flood & Drainage System
+   ================================================ */
+
+/* ── Page header ────────────────────────────────── */
+
+
+/* ── Info Banner ─────────────────────────────────── */
+.submit-info-banner {
+    background: linear-gradient(135deg, #eff6ff, #dbeafe);
+    border: 1px solid #bfdbfe;
+    border-left: 4px solid #3b82f6;
+    border-radius: 0.875rem;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.75rem;
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.05);
+}
+
+.submit-info-banner i {
+    color: #3b82f6;
+    font-size: 1.6rem;
+    margin-top: 0.1rem;
+    flex-shrink: 0;
+}
+
+.submit-info-banner h4 {
+    margin: 0 0 0.35rem 0;
+    color: #1e40af;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.submit-info-banner p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #2563eb;
+    line-height: 1.5;
+}
+
+/* ── Outer form wrapper ─────────────────────────── */
+.form-container {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    max-width: none;
+    border: none;
+    flex: 1;
+}
+
+/* ── Two-column layout ──────────────────────────── */
+.submit-report-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 1.75rem;
+    align-items: start;
+}
+
+@media (max-width: 960px) {
+    .submit-report-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ── Main form panel (left) ─────────────────────── */
+.main-form-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* ── Form section card ──────────────────────────── */
+.form-section {
+    background: #ffffff;
+    border-radius: 1rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+
+.form-section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border-bottom: 1px solid #bbf7d0;
+}
+
+.form-section-header i {
+    width: 32px;
+    height: 32px;
+    border-radius: 0.5rem;
+    background: #065f46;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+.form-section-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #065f46;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin: 0;
+}
+
+.form-section-body {
+    padding: 1.5rem;
+}
+
+
+/* ── Form grid ──────────────────────────────────── */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem 1.5rem;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 640px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ── Form groups & labels ───────────────────────── */
+.form-group {
+    margin-bottom: 0;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.45rem;
+    color: #374151;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.form-group label .req-marker {
+    color: #ef4444;
+}
+
+.form-group label .opt-tag {
+    font-weight: 400;
+    color: #9ca3af;
+    font-size: 0.75rem;
+    text-transform: none;
+    letter-spacing: 0;
+    margin-left: 0.25rem;
+}
+
+/* ── Input fields ───────────────────────────────── */
+.form-control {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 0.625rem;
+    font-size: 0.9rem;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    background: #f9fafb;
+    color: #111827;
+    box-sizing: border-box;
+}
+
+.form-control::placeholder {
+    color: #9ca3af;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #059669;
+    box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.12);
+    background: #ffffff;
+}
+
+select.form-control {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.75rem center;
+    background-repeat: no-repeat;
+    background-size: 1.2em;
+    padding-right: 2.5rem;
+}
+
+/* ── Form actions ───────────────────────────────── */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    background: #f9fafb;
+    border-top: 1px solid #e5e7eb;
+    border-radius: 0 0 1rem 1rem;
+}
+
+.btn-submit {
+    flex: unset;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 2rem;
+    background: linear-gradient(135deg, #065f46 0%, #059669 100%);
+    color: white;
+    border: none;
+    border-radius: 0.625rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s;
+    box-shadow: 0 3px 10px rgba(6, 95, 70, 0.35);
+    letter-spacing: 0.2px;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(6, 95, 70, 0.45);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(6, 95, 70, 0.3);
+}
+
+.btn-cancel {
+    padding: 0.8rem 1.5rem;
+    background: #ffffff;
+    color: #6b7280;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 0.625rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.btn-cancel:hover {
+    background: #f3f4f6;
+    border-color: #d1d5db;
+    color: #374151;
+}
+
+/* ── Messsages & Back button ────────────────────── */
+.back-btn {
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #4b5563;
+    padding: 0.6rem 1rem;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 0.625rem;
+    background: white;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.back-btn:hover {
+    background: #f9fafb;
+    border-color: #d1d5db;
+    color: #111827;
+}
+
+.msg {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 500;
+    padding: 0.875rem 1.25rem;
+    border-radius: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.success-msg {
+    background: #dcfce7;
+    border: 1px solid #bbf7d0;
+    color: #166534;
+}
+
+.error-msg {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #991b1b;
+}
+
+/* ── Context Sidebar Panels (Right) ─────────────── */
+.context-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    position: sticky;
+    top: 90px;
+}
+
+.side-panel {
+    border-radius: 1rem;
+    padding: 1.25rem 1.4rem;
+    border: 1px solid transparent;
+}
+
+.priority-box {
+    background: linear-gradient(145deg, #fef2f2, #fee2e2);
+    border-color: #fca5a5;
+}
+
+.priority-box .panel-title {
+    color: #b91c1c;
+}
+
+.tips-box {
+    background: linear-gradient(145deg, #fffbeb, #fef3c7);
+    border-color: #fde68a;
+}
+
+.tips-box .panel-title {
+    color: #d97706;
+}
+
+.panel-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    margin: 0 0 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.guideline-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.guideline-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    font-size: 0.815rem;
+    color: #374151;
+    background: white;
+    border-radius: 0.625rem;
+    padding: 0.625rem 0.875rem;
+    border: 1px solid #e5e7eb;
+    line-height: 1.5;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.priority-box .guideline-list li {
+    border-color: #fecaca;
+}
+
+.tips-box .guideline-list li {
+    border-color: #fde68a;
+}
+
+.g-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+}
+
+.g-icon.critical {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.g-icon.high {
+    background: #ffedd5;
+    color: #ea580c;
+}
+
+.g-icon.low {
+    background: #ecfdf5;
+    color: #10b981;
+}
+
+.g-icon.tip {
+    background: #fef3c7;
+    color: #d97706;
+}

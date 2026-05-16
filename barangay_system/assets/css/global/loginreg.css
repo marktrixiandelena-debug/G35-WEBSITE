@@ -1,0 +1,285 @@
+:root {
+    --primary-color: #065f46;
+    /* Deep green to match gradient */
+    --primary-hover: #047857;
+    /* Forest green on hover */
+    --bg-gradient-green: linear-gradient(135deg, #065f46 0%, #047857 50%, #059669 100%);
+    /* Deep green gradient */
+    --glass-bg: #ffffff;
+    /* White card */
+    --text-color: #111827;
+    /* Dark gray */
+    --text-light: #6b7280;
+    --error-color: #ef4444;
+    --link-color: #059669;
+    /* Green for links to match theme */
+    --bg-light: #b6c4c6;
+    /* Celestial Cloud 6 - soft blue-gray (RGB: 182, 196, 198) */
+    --shadow-lg: 0 8px 20px -4px rgba(0, 0, 0, 0.08), 0 4px 8px -4px rgba(0, 0, 0, 0.03);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    /* Light gray fallback */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* 1. Landing Page Background */
+.bg-landing {
+    background: var(--bg-light);
+}
+
+/* 2. Login Page Background (Celestial Cloud 6) */
+.bg-login {
+    background: var(--bg-light);
+}
+
+/* 3. Plain/Admin Background */
+.bg-plain {
+    background: var(--bg-light);
+}
+
+/* Dashboard specific override to ensure full width/height behavior if needed */
+.dashboard-body {
+    background: var(--bg-light);
+    display: block;
+    /* Dashboards might not want flex centering */
+    padding: 20px;
+}
+
+.auth-container {
+    background: var(--glass-bg);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-lg);
+    width: 100%;
+    max-width: 400px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.auth-header h2 {
+    color: var(--text-color);
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.auth-header p {
+    color: var(--text-light);
+    font-size: 0.875rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: all 0.2s;
+    background: #f9fafb;
+    color: #111827;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+    background: white;
+}
+
+/* Password Toggle Styles */
+.password-wrapper {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-light);
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.password-toggle:hover {
+    color: var(--primary-color);
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 0.875rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+}
+
+.alert {
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+.alert-danger {
+    background-color: #fef2f2;
+    color: var(--error-color);
+    border: 1px solid #fee2e2;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.875rem;
+    color: var(--text-light);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+    .auth-container {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    .auth-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .form-group margin-bottom {
+        margin-bottom: 1rem;
+    }
+}
+
+/* ============ TOAST NOTIFICATION CONTAINER ============ */
+#toast-container {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    pointer-events: none;
+}
+
+/* ==================================================
+   GLOBAL FLASH TOAST NOTIFICATIONS
+================================================== */
+.flash-toast {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 1.25rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Soft shadow as requested */
+    font-size: 0.95rem;
+    font-weight: 500;
+    max-width: 400px;
+    opacity: 0;
+    transform: translateY(-15px);
+    animation: toast-slide-in 0.4s ease forwards;
+    pointer-events: auto;
+}
+
+/* Variants */
+.flash-toast-success {
+    background-color: #f0fdf4;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+.flash-toast-success i { color: #22c55e; font-size: 1.1rem; }
+
+.flash-toast-error {
+    background-color: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+.flash-toast-error i { color: #ef4444; font-size: 1.1rem; }
+
+.flash-toast-warning {
+    background-color: #fffbeb;
+    color: #b45309;
+    border: 1px solid #fde68a;
+}
+.flash-toast-warning i { color: #f59e0b; font-size: 1.1rem; }
+
+.flash-toast-info {
+    background-color: #eff6ff;
+    color: #1e3a8a;
+    border: 1px solid #bfdbfe;
+}
+.flash-toast-info i { color: #3b82f6; font-size: 1.1rem; }
+
+@keyframes toast-slide-in {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    #toast-container {
+        top: 1rem;
+        right: 1rem;
+        left: 1rem;
+        align-items: center;
+    }
+    .flash-toast {
+        width: 100%;
+        max-width: none;
+    }
+}
