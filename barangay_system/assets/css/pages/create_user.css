@@ -1,0 +1,430 @@
+/* ================================================
+   create_user.css — Create User Page
+   Barangay Calauag Flood & Drainage System
+   ================================================ */
+
+/* ── Page header ────────────────────────────────── */
+.page-header {
+    margin-bottom: 2rem;
+}
+
+/* ── Outer form wrapper ─────────────────────────── */
+.form-container {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    max-width: none;
+    border: none;
+}
+
+/* ── Two-column layout ──────────────────────────── */
+.create-user-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 1.75rem;
+    align-items: start;
+}
+
+@media (max-width: 960px) {
+    .create-user-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ── Main form panel (left) ─────────────────────── */
+.main-form-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* ── Form section card ──────────────────────────── */
+.form-section {
+    background: #ffffff;
+    border-radius: 1rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+
+.form-section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border-bottom: 1px solid #bbf7d0;
+}
+
+.form-section-header i {
+    width: 32px;
+    height: 32px;
+    border-radius: 0.5rem;
+    background: #065f46;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+.form-section-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #065f46;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin: 0;
+}
+
+.form-section-body {
+    padding: 1.5rem;
+}
+
+/* ── Form grid ──────────────────────────────────── */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem 1.5rem;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 640px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ── Form groups & labels ───────────────────────── */
+.form-group {
+    margin-bottom: 0;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.45rem;
+    color: #374151;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.form-group label .opt-tag {
+    font-weight: 400;
+    color: #9ca3af;
+    font-size: 0.75rem;
+    text-transform: none;
+    letter-spacing: 0;
+    margin-left: 0.25rem;
+}
+
+/* ── Input fields ───────────────────────────────── */
+.form-control {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 0.625rem;
+    font-size: 0.9rem;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    background: #f9fafb;
+    color: #111827;
+    box-sizing: border-box;
+}
+
+.form-control::placeholder {
+    color: #9ca3af;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #059669;
+    box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.12);
+    background: #ffffff;
+}
+
+select.form-control {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.75rem center;
+    background-repeat: no-repeat;
+    background-size: 1.2em;
+    padding-right: 2.5rem;
+}
+
+/* Role-coloured focus ring */
+select[name="role"]:focus {
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+}
+
+/* ── Username checker ───────────────────────────── */
+.username-wrap {
+    position: relative;
+}
+
+.username-status {
+    font-size: 0.78rem;
+    margin-top: 0.35rem;
+    min-height: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: color 0.2s;
+}
+
+.username-status.available {
+    color: #16a34a;
+}
+
+.username-status.taken {
+    color: #dc2626;
+}
+
+.username-status.checking {
+    color: #6b7280;
+}
+
+/* ── Form actions ───────────────────────────────── */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    background: #f9fafb;
+    border-top: 1px solid #e5e7eb;
+    border-radius: 0 0 1rem 1rem;
+}
+
+.btn-submit {
+    flex: unset;
+    /* override global flex:1 */
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 2rem;
+    background: linear-gradient(135deg, #065f46 0%, #059669 100%);
+    color: white;
+    border: none;
+    border-radius: 0.625rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s;
+    box-shadow: 0 3px 10px rgba(6, 95, 70, 0.35);
+    letter-spacing: 0.2px;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(6, 95, 70, 0.45);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(6, 95, 70, 0.3);
+}
+
+.btn-cancel {
+    padding: 0.8rem 1.5rem;
+    background: #ffffff;
+    color: #6b7280;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 0.625rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.btn-cancel:hover {
+    background: #f3f4f6;
+    border-color: #d1d5db;
+    color: #374151;
+}
+
+/* ── Right context sidebar ──────────────────────── */
+.context-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    position: sticky;
+    top: 90px;
+}
+
+/* ── Panel cards ────────────────────────────────── */
+.side-panel {
+    border-radius: 1rem;
+    padding: 1.25rem 1.4rem;
+    border: 1px solid transparent;
+}
+
+/* Security card */
+.security-box {
+    background: linear-gradient(145deg, #f0fdf4, #dcfce7);
+    border-color: #86efac;
+}
+
+.security-box .panel-title {
+    color: #065f46;
+}
+
+/* Guidelines card */
+.guidelines-box {
+    background: linear-gradient(145deg, #eff6ff, #dbeafe);
+    border-color: #93c5fd;
+}
+
+.guidelines-box .panel-title {
+    color: #1e40af;
+}
+
+/* Panel title */
+.panel-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    margin: 0 0 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Temp-password info row */
+.temp-pass-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background: white;
+    border-radius: 0.75rem;
+    padding: 0.875rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #bbf7d0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.temp-pass-info .pass-icon {
+    width: 36px;
+    height: 36px;
+    background: #dcfce7;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #16a34a;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.temp-pass-info p {
+    margin: 0;
+    font-size: 0.815rem;
+    color: #374151;
+    line-height: 1.55;
+}
+
+.temp-pass-info strong {
+    display: block;
+    color: #065f46;
+    margin-bottom: 0.15rem;
+    font-size: 0.85rem;
+}
+
+/* Checkbox row */
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    background: white;
+    border: 1px solid #bbf7d0;
+    border-radius: 0.75rem;
+    padding: 0.7rem 1rem;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.checkbox-wrapper:hover {
+    background: #f0fdf4;
+    border-color: #4ade80;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+    accent-color: #065f46;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.checkbox-wrapper label {
+    margin: 0;
+    font-size: 0.84rem;
+    color: #065f46;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Guidelines list */
+.guideline-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.guideline-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    font-size: 0.815rem;
+    color: #374151;
+    background: white;
+    border-radius: 0.625rem;
+    padding: 0.625rem 0.875rem;
+    border: 1px solid #bfdbfe;
+    line-height: 1.5;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.g-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+}
+
+.g-icon.resident {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.g-icon.admin {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.g-icon.privacy {
+    background: #ede9fe;
+    color: #7c3aed;
+}

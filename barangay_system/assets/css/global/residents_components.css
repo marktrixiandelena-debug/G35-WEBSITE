@@ -1,0 +1,370 @@
+/* ================================================================
+   residents_components.css — Teal Component Overrides (Resident)
+   Barangay Calauag Flood & Drainage Reporting System
+
+   Purpose: Override admindashboard.css shared-component colors from
+   admin dark-green (#065f46 / #059669) to resident teal palette
+   (#1F7A8C / #155E6C / #4FB3BF).  Load AFTER admindashboard.css in
+   every resident page. Admin pages never load this file.
+   ================================================================ */
+
+/* ---- Teal palette tokens (reference) ----
+   Header / Shell : residents_global.css  (already teal)
+   Dark teal      : #155E6C
+   Mid teal       : #1F7A8C
+   Light teal     : #4FB3BF
+   ---------------------------------------------------------------- */
+
+/* Page Headings */
+.content h2,
+.page-header h2,
+.page-header-flex h2 {
+    color: #155E6C;
+}
+
+.content h2::after,
+.page-header h2::after,
+.page-header-flex h2::after {
+    background: linear-gradient(90deg, #1F7A8C, #4FB3BF);
+}
+
+/* Summary Box Headings */
+.summary-box h3 {
+    color: #155E6C;
+}
+
+/* Table Header */
+table th {
+    background: #1F7A8C;
+}
+
+/* Dashboard Panel Headings */
+.dashboard-panel h3 {
+    color: #155E6C;
+}
+
+/* Primary Buttons */
+.btn-submit {
+    background: linear-gradient(135deg, #155E6C, #1F7A8C);
+    box-shadow: 0 2px 4px rgba(31, 122, 140, 0.15);
+}
+
+.btn-submit:hover {
+    box-shadow: 0 4px 8px rgba(31, 122, 140, 0.25);
+}
+
+.btn {
+    background: linear-gradient(135deg, #155E6C, #1F7A8C);
+    box-shadow: 0 2px 4px rgba(31, 122, 140, 0.15);
+}
+
+.btn:hover {
+    box-shadow: 0 4px 8px rgba(31, 122, 140, 0.25);
+}
+
+/* Form Fields */
+.form-control:focus {
+    border-color: #1F7A8C;
+    box-shadow: 0 0 0 3px rgba(31, 122, 140, 0.12);
+}
+
+select.form-control:focus {
+    border-color: #1F7A8C;
+}
+
+.filter-group select:focus {
+    border-color: #1F7A8C;
+}
+
+/* Info / Alert Success Tints */
+.alert-success {
+    background: #f0fbfc;
+    color: #155E6C;
+    border-color: #b2e4ea;
+    border-left-color: #4FB3BF;
+}
+
+.info-note {
+    background: #f0fbfc;
+    border-left-color: #4FB3BF;
+}
+
+.info-note p {
+    color: #155E6C;
+}
+
+/* Stat Card Defaults */
+/* (keep coloured variants; only the plain default changes) */
+.stat-card {
+    border-left-color: #1F7A8C;
+}
+
+/* Responsive Layout Adjustments */
+@media (max-width: 768px) {
+    .dashboard-container {
+        min-height: 100dvh;
+    }
+    
+    .content {
+        padding-bottom: 90px !important; /* Better fit for smaller bottom nav */
+    }
+
+    /* Page Header & Subtitle Unification */
+    /* Ensure all page header containers stack and space uniformly */
+    .page-header,
+    .page-header-flex {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+        width: 100% !important;
+        margin-top: 0 !important;
+        margin-bottom: 1rem !important;
+        padding: 0 !important;
+    }
+
+    .page-header-flex > div:first-child {
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* Standardize all heading titles (Dashboard, Submit Report, My Profile, My Reports) */
+    .page-header h2,
+    .page-header-flex h2 {
+        font-size: 1.3rem !important;
+        font-weight: 700 !important;
+        margin-top: 0 !important;
+        margin-bottom: 0.5rem !important; /* Increased to separate from subtitle */
+        padding-left: 0 !important;
+        display: inline-block !important;
+        width: 100% !important;
+        text-align: left !important;
+        line-height: 1.2 !important;
+    }
+
+    /* Standardize all subtitles/descriptions below titles */
+    .page-header p,
+    .page-header-flex p {
+        font-size: 0.82rem !important;
+        color: #6b7280 !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important; 
+        padding-left: 0 !important;
+        width: 100% !important;
+        text-align: left !important;
+        line-height: 1.55 !important;
+        opacity: 0.95;
+    }
+
+    .dashboard-panel,
+    .summary-box,
+    .form-container {
+        padding: 0.875rem !important;
+        border-radius: 0.75rem !important;
+        margin-bottom: 0.875rem !important;
+    }
+
+    .stats-grid {
+        gap: 0.625rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .dashboard-middle-grid {
+        gap: 0.75rem !important;
+        margin-bottom: 0.875rem !important;
+    }
+
+    /* Information Note Card / Alert Optimization */
+    .info-note, .alert-box, .alert-success, .alert-error {
+        padding: 0.85rem 1.15rem !important;
+        margin-top: 1rem !important;
+        margin-bottom: 1.25rem !important;
+        border-radius: 0.6rem !important;
+        gap: 0.6rem !important;
+    }
+
+    .info-note p, .alert-box, .alert-success, .alert-error {
+        font-size: 0.8rem !important;
+        line-height: 1.4 !important;
+    }
+
+    /* Form Section Headers ("INCIDENT DETAILS") */
+    .dashboard-panel h3, .summary-box h3 {
+        font-size: 0.78rem !important;
+        margin-bottom: 0.75rem !important;
+        padding-bottom: 0.5rem !important;
+    }
+
+    /* Form Inputs Optimization */
+    .form-group {
+        margin-bottom: 0.75rem !important; 
+    }
+
+    .form-group label {
+        margin-bottom: 0.25rem !important;
+        font-size: 0.75rem !important;
+    }
+
+    .form-control {
+        padding: 0.5rem 0.75rem !important; 
+        font-size: 0.875rem !important;
+        border-radius: 0.5rem !important;
+    }
+
+    .form-actions {
+        margin-top: 1rem !important;
+    }
+
+    /* Floating Action Button (New Report) */
+    .btn-fab-mobile {
+        position: fixed;
+        bottom: 85px;  
+        right: 1.25rem;
+        z-index: 999;
+        border-radius: 2rem !important; 
+        padding: 0.85rem 1.35rem !important;
+        box-shadow: 0 4px 12px rgba(31, 122, 140, 0.25) !important;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.95rem;
+    }
+
+    /* Clean Card Layout for Mobile Tables */
+    table tr {
+        transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s ease, background-color 0.25s ease;
+    }
+
+    table tr:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(31, 122, 140, 0.08) !important;
+        border-color: #b2e4ea !important;
+        background-color: #f8fdfd !important;
+    }
+
+    table tr:active {
+        transform: translateY(0) scale(0.99);
+        box-shadow: 0 1px 3px rgba(31, 122, 140, 0.06) !important;
+        background-color: #f0fbfc !important;
+    }
+
+    /* Remove the weird gray box effect inside the card */
+    table tr:hover td, table tr:active td {
+        background-color: transparent !important;
+    }
+
+    table td {
+        border-bottom: none !important; 
+        padding: 0.25rem 0 !important; 
+    }
+    
+    table td:first-child {
+        padding-top: 0.5rem !important;
+    }
+    
+    table td:last-child {
+        margin-top: 0.75rem;
+        border-top: 1px dotted #e5e7eb !important; 
+        padding-top: 0.85rem !important;
+        background-color: transparent !important;
+    }
+
+    table td[data-label="Type"]::before,
+    table td[data-label="Location"]::before,
+    table td[data-label="Description"]::before {
+        display: none !important; /* Minimize clutter */
+    }
+    
+    table td[data-label="Type"] {
+        padding-bottom: 0.5rem !important;
+    }
+    
+    table td[data-label="Type"] strong {
+        font-size: 1.1rem !important;
+        margin-bottom: 0.4rem !important;
+    }
+
+    /* ============ RESIDENT FILTER TOOLBAR — RESPONSIVE WRAPPING ============ */
+    /* Ensures all resident filter toolbars wrap cleanly on mobile             */
+    /* instead of overflowing horizontally. Matches Admin Portal behavior.     */
+
+    /* Toolbar container: allow vertical wrap */
+    .page-toolbar {
+        flex-wrap: wrap !important;
+        gap: 0.5rem !important;
+        align-items: flex-start !important;
+    }
+
+    /* Filter form: full width, wrapping */
+    .filter-section,
+    .resident-filter-row {
+        flex-wrap: wrap !important;
+        overflow-x: visible !important;
+        gap: 0.4rem !important;
+        width: 100% !important;
+        padding-bottom: 0 !important;
+    }
+
+    /* Search input: always full width, always at top */
+    .search-group {
+        flex: 1 1 100% !important;
+        width: 100% !important;
+        order: -1 !important;
+    }
+
+    .search-input {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        height: 38px !important;
+    }
+
+    /* Dropdowns: two per row */
+    .filter-group {
+        flex: 1 1 calc(50% - 0.25rem) !important;
+        min-width: 120px !important;
+        max-width: 100% !important;
+    }
+
+    .filter-group select,
+    .filter-group input {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        height: 38px !important;
+        padding: 0.4rem 1.9rem 0.4rem 0.7rem !important;
+        font-size: 0.855rem !important;
+        border-radius: 0.5rem !important;
+    }
+
+    /* More filters: same width slot as a dropdown */
+    .more-filters-wrapper {
+        flex: 1 1 calc(50% - 0.25rem) !important;
+        min-width: 120px !important;
+    }
+
+    .more-filters-btn {
+        width: 100% !important;
+        height: 38px !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+    }
+
+    /* More filters panel: anchored left, never off-screen */
+    .more-filters-panel {
+        right: auto !important;
+        left: 0 !important;
+        max-width: calc(100vw - 2rem) !important;
+    }
+
+    /* Reset/refresh button: compact fixed icon */
+    .btn-reset-filter {
+        flex: 0 0 38px !important;
+        height: 38px !important;
+        width: 38px !important;
+        padding: 0 !important;
+        border-radius: 0.5rem !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+}

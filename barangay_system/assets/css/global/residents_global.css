@@ -1,0 +1,452 @@
+/* ================================================================
+   residents_global.css — Resident Shell
+   Contains: header/navbar, sidebar, layout container, footer.
+   ================================================================ */
+
+/* Base Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background: #f0f2f5;
+    color: #111827;
+    line-height: 1.6;
+}
+
+/* Header / Navbar */
+header,
+header.dashboard-header {
+    background: linear-gradient(135deg, #1F7A8C 0%, #1a6b7a 100%);
+    color: white;
+    padding: 0.875rem 1.75rem;
+    box-shadow: 0 2px 8px rgba(31, 122, 140, 0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.brand-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-lg {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
+}
+
+.header-titles h1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+
+.header-titles h2 {
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin: 0;
+    opacity: 0.85;
+    color: #caf0f8;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profile-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 0.4rem 0.75rem 0.4rem 0.9rem;
+    border-radius: 2rem;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.role-text {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #caf0f8;
+}
+
+.avatar-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4FB3BF, #38a3b5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.95rem;
+    color: #0d4a54;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    flex-shrink: 0;
+}
+
+.btn-logout {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.45rem 1rem;
+    border-radius: 2rem;
+    transition: all 0.2s;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(4px);
+    letter-spacing: 0.2px;
+}
+
+.btn-logout i {
+    color: #fca5a5;
+    font-size: 0.85rem;
+}
+
+.btn-logout:hover {
+    background: rgba(239, 68, 68, 0.25);
+    color: white;
+    border-color: rgba(239, 68, 68, 0.45);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.15);
+}
+
+.sidebar-toggle {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-toggle:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* Layout */
+.dashboard-container {
+    display: flex;
+    min-height: calc(100vh - 130px);
+    align-items: stretch;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 260px;
+    min-width: 260px;
+    background: #155E6C;
+    padding: 1.5rem 0;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+    align-self: stretch;
+    transition: all 0.3s ease;
+}
+
+.sidebar h3 {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.7rem;
+    margin: 0 1.25rem 1rem 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    margin-bottom: 0.125rem;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    color: rgba(255, 255, 255, 0.72);
+    text-decoration: none;
+    transition: all 0.2s;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-left: 3px solid transparent;
+    margin: 0 0.5rem 0 0;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.sidebar a i {
+    width: 20px;
+    text-align: center;
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-right: 0.75rem;
+}
+
+.sidebar a:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    border-left-color: rgba(255, 255, 255, 0.3);
+}
+
+.sidebar a:hover i {
+    opacity: 1;
+}
+
+.sidebar a.active {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border-left-color: #4FB3BF;
+    font-weight: 600;
+}
+
+.sidebar a.active i {
+    opacity: 1;
+    color: #4FB3BF;
+}
+
+body.collapsed .sidebar {
+    width: 0;
+    min-width: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+body.collapsed .content {
+    max-width: 100%;
+}
+
+/* Content Area */
+.content {
+    flex: 1;
+    padding: 2rem 2.5rem;
+    min-width: 0;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #155E6C, #1F7A8C);
+    color: rgba(255, 255, 255, 0.85);
+    text-align: center;
+    padding: 1.25rem;
+    margin-top: auto;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+/* ============ RESPONSIVE — MOBILE APP FEEL ============ */
+@media (max-width: 768px) {
+
+    /* Fixed top header */
+    header,
+    header.dashboard-header {
+        padding: 0.4rem 0.85rem;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        box-shadow: 0 1px 8px rgba(0,0,0,0.08); /* slightly softer shadow */
+        min-height: 52px; /* Ensure uniform height */
+    }
+    
+    .brand-section {
+        gap: 0.45rem;
+        flex: 1;
+        min-width: 0; 
+    }
+    
+    .logo-lg {
+        width: 30px; /* Reduced from 34 */
+        height: 30px;
+        border-width: 1.5px; /* Thinner border for cleaner look */
+    }
+
+    .header-titles {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 0;
+    }
+    
+    .header-titles h1 {
+        font-size: 0.9rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 0;
+    }
+    
+    .header-titles h2 {
+        display: none; /* hide subtitle to save space */
+    }
+
+    .user-actions {
+        gap: 0.5rem;
+        flex-shrink: 0;
+    }
+
+    .profile-badge {
+        padding: 0;
+        background: transparent;
+        border: none;
+    }
+
+    .role-text {
+        display: none;
+    }
+
+    .btn-logout {
+        padding: 0;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0; /* Hide text */
+    }
+
+    .btn-logout i {
+        font-size: 1.1rem;
+        margin: 0;
+    }
+
+    .sidebar-toggle {
+        display: none; /* Hide hamburger, using bottom bar */
+    }
+
+    /* Update layout container spacing */
+    .dashboard-container {
+        flex-direction: column;
+        padding-top: 52px; /* reduced from 85px to match slimmer header */
+        min-height: 100vh;
+    }
+
+    /* THE MAGIC: BOTTOM APP NAVIGATION BAR */
+    body:not(.collapsed) .sidebar,
+    body.collapsed .sidebar,
+    .sidebar {
+        width: 100%;
+        min-width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        padding: 0.4rem 0 0.5rem 0; /* Reduced padding from 0.8rem to 0.5rem */
+        background: rgba(255, 255, 255, 0.96); /* Slight transparency feels more native */
+        backdrop-filter: blur(8px);
+        box-shadow: 0 -1px 8px rgba(0, 0, 0, 0.04); /* Even softer shadow */
+        border-top: 1px solid #f3f4f6; /* Lighter border */
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: 0; /* Remove bloat radius for native flat bar feel */
+    }
+
+    .sidebar h3 {
+        display: none; 
+    }
+
+    .sidebar ul {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        padding: 0 0.25rem;
+        margin: 0;
+    }
+
+    .sidebar li {
+        margin: 0;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .sidebar a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0.35rem 0.2rem;
+        border: none !important;
+        background: transparent !important;
+        border-radius: 0.6rem;
+        font-size: 0.68rem; /* Slightly smaller text */
+        font-weight: 500;
+        gap: 0.15rem; /* Tighter gap */
+        width: 100%;
+        color: #6b7280;
+        transition: all 0.2s;
+    }
+
+    .sidebar a i {
+        margin: 0;
+        font-size: 1.15rem; /* Slightly smaller icon */
+        width: auto;
+        color: #9ca3af;
+        transition: all 0.2s ease-out;
+    }
+
+    .sidebar a:hover {
+        color: #4FB3BF;
+    }
+
+    .sidebar a.active {
+        color: #155E6C;
+        background: transparent !important; /* Removed capsule background for cleaner look */
+    }
+
+    .sidebar a.active i {
+        color: #155E6C; /* Stronger active color */
+        transform: translateY(-1px);
+        text-shadow: none;
+    }
+
+    /* Content area adjustment */
+    .content {
+        padding: 0.85rem 0.85rem 80px 0.85rem; /* Refined padding for cleaner flow */
+        width: 100%;
+    }
+
+    footer {
+        display: none; /* Hide footer to save vertical space on mobile */
+    }
+}
